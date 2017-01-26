@@ -50,7 +50,7 @@
     <Compile Include="TestCollectionModel.cs" />
     <Compile Include="TestModel.cs" />
     <Compile Include="TestResult.cs" />
-    <Compile Include="TestStep.cs" />
+    <Compile Include="TestStepModel.cs" />
     <Compile Include="XElementExtensions.cs" />
     <Compile Include="XmlParser.cs" />
   </ItemGroup>

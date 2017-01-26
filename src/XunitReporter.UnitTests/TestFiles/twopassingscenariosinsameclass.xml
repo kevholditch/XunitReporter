@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<assemblies>
+  <assembly name="C:\projects\CommandScratchpad\CommandScratchpad\bin\Debug\CommandScratchpad.EXE" environment="64-bit .NET 4.0.30319.42000 [collection-per-class, parallel (2 threads)]" test-framework="xUnit.net 2.1.0.3179" run-date="2017-01-26" run-time="17:30:17" config-file="C:\projects\CommandScratchpad\CommandScratchpad\bin\Debug\CommandScratchpad.exe.config" total="8" passed="8" failed="0" skipped="0" time="0.149" errors="0">
+    <errors />
+    <collection total="8" passed="8" failed="0" skipped="0" name="Test collection for CommandScratchpad.MyTest" time="0.010">
+      <test name="CommandScratchpad.MyTest.MyScenario() [01] Given something" type="CommandScratchpad.MyTest" method="MyScenario" time="0.0023911" result="Pass" />
+      <test name="CommandScratchpad.MyTest.MyScenario() [02] When something" type="CommandScratchpad.MyTest" method="MyScenario" time="0.0000724" result="Pass" />
+      <test name="CommandScratchpad.MyTest.MyScenario() [03] Then something" type="CommandScratchpad.MyTest" method="MyScenario" time="0.0000513" result="Pass" />
+      <test name="CommandScratchpad.MyTest.MyScenario() [04] And then another thing" type="CommandScratchpad.MyTest" method="MyScenario" time="0.0000326" result="Pass" />
+      <test name="CommandScratchpad.MyTest.AnotherScenario() [01] Given I start with this" type="CommandScratchpad.MyTest" method="AnotherScenario" time="0.00009" result="Pass" />
+      <test name="CommandScratchpad.MyTest.AnotherScenario() [02] When I do this" type="CommandScratchpad.MyTest" method="AnotherScenario" time="0.0000632" result="Pass" />
+      <test name="CommandScratchpad.MyTest.AnotherScenario() [03] Then this happens" type="CommandScratchpad.MyTest" method="AnotherScenario" time="0.000072" result="Pass" />
+      <test name="CommandScratchpad.MyTest.AnotherScenario() [04] And then another thing happens too" type="CommandScratchpad.MyTest" method="AnotherScenario" time="0.0000343" result="Pass" />
+    </collection>
+  </assembly>
+</assemblies>

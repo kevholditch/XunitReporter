@@ -64,12 +64,20 @@ namespace XunitReporter
                             };
                         })
                         .GroupBy(x => new Tuple<string, string>(x.Type, x.TestName))
-                        .Select(x => new TestModel
+                        .Select(x =>
                         {
-                            Name = x.Key.Item2,
-                            TestSteps = x.OrderBy(s => s.StepPosition)
-                                         .Select(s => new TestStep {Step = s.StepName, StepResult = s.Result})
-                                         .ToList()
+                            var t = new TestModel
+                            {
+                                Name = x.Key.Item2,
+                                TestSteps = x.OrderBy(s => s.StepPosition)
+                                    .Select(s => new TestStepModel {Step = s.StepName, StepResult = s.Result})
+                                    .ToList()
+                            };
+
+                            t.TestResult = t.TestSteps.Any(s => s.StepResult == TestResult.Fail)
+                                ? TestResult.Fail
+                                : TestResult.Pass;
+                            return t;
                         })
                         .ToList();
 

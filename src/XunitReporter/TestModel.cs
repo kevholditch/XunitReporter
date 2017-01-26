@@ -6,6 +6,6 @@ namespace XunitReporter
     {
         public string Name { get; set; }
         public TestResult TestResult { get; set; }
-        public List<TestStep> TestSteps { get; set; }
+        public List<TestStepModel> TestSteps { get; set; }
     }
 }

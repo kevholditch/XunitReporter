@@ -1,6 +1,6 @@
 ﻿namespace XunitReporter
 {
-    public class TestStep
+    public class TestStepModel
     {
         public string Step { get; set; }
         public TestResult StepResult { get; set; }
