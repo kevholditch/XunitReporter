@@ -1,5 +1,5 @@
 # XunitReporter  ![Appveyor build status](https://ci.appveyor.com/api/projects/status/2s9xqbjgnab8tkbs?svg=true)
-Convert Xunit xml reports to html using razor
+Convert Xunit XBehave xml reports to html using razor
 
 XUnit reporter is a console app to extract the Gherkin (Given, When, Then) syntax from XBehave tests and then render them to html using Razor.
 
