@@ -15,7 +15,7 @@ namespace XunitReporter
 
             var reporterArgs = Args.Parse<ReporterArgs>(args);
 
-            Engine.Razor.Compile(AssemblyResource.InThisAssembly("TestView.cshtml").GetText(), "testTemplate", typeof(List<TestAssemblyModel>));
+            Engine.Razor.Compile(AssemblyResource.InThisAssembly("TestView.cshtml").GetText(), "testTemplate", typeof(TestPageModel));
 
             var model = TestPageModelBuilder.Create()
                                             .WithPageTitle(reporterArgs.PageTitle)
@@ -23,7 +23,7 @@ namespace XunitReporter
                                             .Build();
 
             var output = new StringWriter();
-            Engine.Razor.Run("testTemplate", output, typeof(List<TestAssemblyModel>), model);
+            Engine.Razor.Run("testTemplate", output, typeof(TestPageModel), model);
 
             File.WriteAllText(reporterArgs.Html, output.ToString());
         }
