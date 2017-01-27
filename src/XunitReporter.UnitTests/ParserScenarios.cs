@@ -28,8 +28,8 @@ namespace XunitReporter.UnitTests
                 {
                     var assemblyModel = result.First();
                     assemblyModel.Name.Should().Be(@"C:\projects\CommandScratchpad\CommandScratchpad\bin\Debug\CommandScratchpad.EXE");
-                    assemblyModel.Total.Should().Be(4);
-                    assemblyModel.Passed.Should().Be(4);
+                    assemblyModel.Total.Should().Be(1);
+                    assemblyModel.Passed.Should().Be(1);
                     assemblyModel.Failed.Should().Be(0);
                     assemblyModel.Skipped.Should().Be(0);
                     assemblyModel.Time.Should().Be(0.153M);
@@ -44,8 +44,8 @@ namespace XunitReporter.UnitTests
                 {
                     var collectionModel = result.First().TestCollections.First();
                     collectionModel.Name.Should().Be(@"Test collection for CommandScratchpad.MyTest");
-                    collectionModel.Total.Should().Be(4);
-                    collectionModel.Passed.Should().Be(4);
+                    collectionModel.Total.Should().Be(1);
+                    collectionModel.Passed.Should().Be(1);
                     collectionModel.Failed.Should().Be(0);
                     collectionModel.Skipped.Should().Be(0);
                     collectionModel.Time.Should().Be(0.009M);
@@ -94,8 +94,8 @@ namespace XunitReporter.UnitTests
                 {
                     var assemblyModel = result.First();
                     assemblyModel.Name.Should().Be(@"C:\projects\CommandScratchpad\CommandScratchpad\bin\Debug\CommandScratchpad.EXE");
-                    assemblyModel.Total.Should().Be(8);
-                    assemblyModel.Passed.Should().Be(8);
+                    assemblyModel.Total.Should().Be(2);
+                    assemblyModel.Passed.Should().Be(2);
                     assemblyModel.Failed.Should().Be(0);
                     assemblyModel.Skipped.Should().Be(0);
                     assemblyModel.Time.Should().Be(0.138M);
@@ -110,8 +110,8 @@ namespace XunitReporter.UnitTests
                 {
                     var collectionModel = result.First().TestCollections.First();
                     collectionModel.Name.Should().Be(@"Test collection for CommandScratchpad.MyTest");
-                    collectionModel.Total.Should().Be(4);
-                    collectionModel.Passed.Should().Be(4);
+                    collectionModel.Total.Should().Be(1);
+                    collectionModel.Passed.Should().Be(1);
                     collectionModel.Failed.Should().Be(0);
                     collectionModel.Skipped.Should().Be(0);
                     collectionModel.Time.Should().Be(0.009M);
@@ -142,8 +142,8 @@ namespace XunitReporter.UnitTests
                 {
                     var collectionModel = result.First().TestCollections[1];
                     collectionModel.Name.Should().Be(@"Test collection for CommandScratchpad.MyTest2");
-                    collectionModel.Total.Should().Be(4);
-                    collectionModel.Passed.Should().Be(4);
+                    collectionModel.Total.Should().Be(1);
+                    collectionModel.Passed.Should().Be(1);
                     collectionModel.Failed.Should().Be(0);
                     collectionModel.Skipped.Should().Be(0);
                     collectionModel.Time.Should().Be(0.009M);
@@ -191,8 +191,8 @@ namespace XunitReporter.UnitTests
                 {
                     var assemblyModel = result.First();
                     assemblyModel.Name.Should().Be(@"C:\projects\CommandScratchpad\CommandScratchpad\bin\Debug\CommandScratchpad.EXE");
-                    assemblyModel.Total.Should().Be(8);
-                    assemblyModel.Passed.Should().Be(8);
+                    assemblyModel.Total.Should().Be(2);
+                    assemblyModel.Passed.Should().Be(2);
                     assemblyModel.Failed.Should().Be(0);
                     assemblyModel.Skipped.Should().Be(0);
                     assemblyModel.Time.Should().Be(0.149M);
@@ -207,8 +207,8 @@ namespace XunitReporter.UnitTests
                 {
                     var collectionModel = result.First().TestCollections.First();
                     collectionModel.Name.Should().Be(@"Test collection for CommandScratchpad.MyTest");
-                    collectionModel.Total.Should().Be(8);
-                    collectionModel.Passed.Should().Be(8);
+                    collectionModel.Total.Should().Be(2);
+                    collectionModel.Passed.Should().Be(2);
                     collectionModel.Failed.Should().Be(0);
                     collectionModel.Skipped.Should().Be(0);
                     collectionModel.Time.Should().Be(0.010M);
@@ -274,10 +274,10 @@ namespace XunitReporter.UnitTests
                 {
                     var assemblyModel = result.First();
                     assemblyModel.Name.Should().Be(@"C:\projects\CommandScratchpad\CommandScratchpad\bin\Debug\CommandScratchpad.EXE");
-                    assemblyModel.Total.Should().Be(4);
-                    assemblyModel.Passed.Should().Be(2);
+                    assemblyModel.Total.Should().Be(1);
+                    assemblyModel.Passed.Should().Be(0);
                     assemblyModel.Failed.Should().Be(1);
-                    assemblyModel.Skipped.Should().Be(1);
+                    assemblyModel.Skipped.Should().Be(0);
                     assemblyModel.Time.Should().Be(0.191M);
                     assemblyModel.Errors.Should().Be(0);
                 });
@@ -290,10 +290,10 @@ namespace XunitReporter.UnitTests
                 {
                     var collectionModel = result.First().TestCollections.First();
                     collectionModel.Name.Should().Be(@"Test collection for RandomNamespace.FailingTest");
-                    collectionModel.Total.Should().Be(4);
-                    collectionModel.Passed.Should().Be(2);
+                    collectionModel.Total.Should().Be(1);
+                    collectionModel.Passed.Should().Be(0);
                     collectionModel.Failed.Should().Be(1);
-                    collectionModel.Skipped.Should().Be(1);
+                    collectionModel.Skipped.Should().Be(0);
                     collectionModel.Time.Should().Be(0.041M);
                 });
 
@@ -340,8 +340,8 @@ namespace XunitReporter.UnitTests
                 {
                     var assemblyModel = result.First();
                     assemblyModel.Name.Should().Be(@"C:\projects\CommandScratchpad\CommandScratchpad\bin\Debug\CommandScratchpad.EXE");
-                    assemblyModel.Total.Should().Be(4);
-                    assemblyModel.Passed.Should().Be(3);
+                    assemblyModel.Total.Should().Be(1);
+                    assemblyModel.Passed.Should().Be(0);
                     assemblyModel.Failed.Should().Be(1);
                     assemblyModel.Skipped.Should().Be(0);
                     assemblyModel.Time.Should().Be(0.210M);
@@ -356,8 +356,8 @@ namespace XunitReporter.UnitTests
                 {
                     var collectionModel = result.First().TestCollections.First();
                     collectionModel.Name.Should().Be(@"Test collection for RandomNamespace.FailingTest");
-                    collectionModel.Total.Should().Be(4);
-                    collectionModel.Passed.Should().Be(3);
+                    collectionModel.Total.Should().Be(1);
+                    collectionModel.Passed.Should().Be(0);
                     collectionModel.Failed.Should().Be(1);
                     collectionModel.Skipped.Should().Be(0);
                     collectionModel.Time.Should().Be(0.054M);

@@ -16,6 +16,6 @@ namespace XunitReporter
         public int Skipped { get; set; }
         public int Errors { get; set; }
         public decimal Time { get; set; }
-        public List<TestCollectionModel> TestCollections { get; private set; }
+        public List<TestCollectionModel> TestCollections { get; set; }
     }
 }

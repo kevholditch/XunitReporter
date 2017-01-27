@@ -22,12 +22,7 @@ namespace XunitReporter
                 var testAssembly = new TestAssemblyModel
                 {
                    Name = node.GetAttributeString("name"),
-                   Total = node.GetAttributeInt("total"),
-                   Passed = node.GetAttributeInt("passed"),
-                   Failed = node.GetAttributeInt("failed"),
-                   Skipped = node.GetAttributeInt("skipped"),
-                   Time = node.GetAttributeDecimal("time"),
-                   Errors = node.GetAttributeInt("errors")
+                   Time = node.GetAttributeDecimal("time")  
                 };
 
                 foreach (var collectionNode in node.XPathSelectElements("collection"))
@@ -35,10 +30,6 @@ namespace XunitReporter
                     var testCollection = new TestCollectionModel
                     {
                         Name = collectionNode.GetAttributeString("name"),
-                        Total = collectionNode.GetAttributeInt("total"),
-                        Passed = collectionNode.GetAttributeInt("passed"),
-                        Failed = collectionNode.GetAttributeInt("failed"),
-                        Skipped = collectionNode.GetAttributeInt("skipped"),
                         Time = collectionNode.GetAttributeDecimal("time")
                     };
 
@@ -114,7 +105,38 @@ namespace XunitReporter
 
             }
 
-            return result;
+            return WithCorrectTotals(result);
+            
+        }
+
+        private static List<TestAssemblyModel> WithCorrectTotals(IEnumerable<TestAssemblyModel> testAssemblyModels)
+        {
+            return testAssemblyModels.Select(assemblyModel =>
+            {
+                var testCollections = assemblyModel.TestCollections.Select(collection => new TestCollectionModel
+                {
+                    Name = collection.Name,
+                    Total = collection.Tests.Count,
+                    Passed = collection.Tests.Count(t => t.TestResult == TestResult.Pass),
+                    Failed = collection.Tests.Count(t => t.TestResult == TestResult.Fail),
+                    Skipped = collection.Tests.Count(t => t.TestResult == TestResult.Skip),
+                    Tests = collection.Tests,
+                    Time = collection.Time
+                }).ToList();
+
+                return new TestAssemblyModel()
+                {
+                    Name = assemblyModel.Name,
+                    Total = testCollections.Select(c => c.Total).Sum(),
+                    Passed = testCollections.Select(c => c.Passed).Sum(),
+                    Failed = testCollections.Select(c => c.Failed).Sum(),
+                    Skipped = testCollections.Select(c => c.Skipped).Sum(),
+                    TestCollections = testCollections,
+                    Time = assemblyModel.Time,
+                    Errors = assemblyModel.Errors
+
+                };
+            }).ToList();
         }
     }
 }
