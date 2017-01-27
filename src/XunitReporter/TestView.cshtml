@@ -1,0 +1,38 @@
+﻿@using XunitReporter
+@model TestPageModel
+
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <title>@Model.PageTitle</title>
+    </head>
+    <body>
+        <p>
+            @foreach (var testAssembly in Model.TestAssemblyModels)
+            {
+                <h1>@testAssembly.Name</h1>
+
+                foreach (var testCollection in testAssembly.TestCollections)
+                {
+                    <h2>@testCollection.Name</h2>
+                    <p>Total: @testCollection.Total, Passed: @testCollection.Passed, Failed: @testCollection.Failed, Skipped: @testCollection.Skipped</p>
+
+                    foreach (var test in testCollection.Tests)
+                    {
+                        <h3>@test.Name   -   @test.TestResult</h3>
+                        foreach (var step in test.TestSteps)
+                        {
+                            <p>@step.Step</p>
+                        }
+
+                    }
+
+               }
+            }
+        </p>
+
+
+    </body>
+</html>
