@@ -52,16 +52,34 @@ namespace XunitReporter
                         .Select(x =>
                         {
                             var split = Regex.Split(x.Fullname, @"\[\d+\]");
-                            var stepPosition = int.Parse(Regex.Match(x.Fullname, @"\[(\d+)\]").Groups[1].Value);
-                            
-                            return new
+
+
+                            if (Regex.IsMatch(x.Fullname, @"\[(\d+)\]"))
                             {
-                                TestName = split[0].Replace(x.Type, "").Replace("()", "").Replace(".", "").Trim(),
-                                StepName = split[1].Trim(),
-                                StepPosition = stepPosition,
-                                Type = x.Type,
-                                Result = x.Result
-                            };
+                                var stepPosition = int.Parse(Regex.Match(x.Fullname, @"\[(\d+)\]").Groups[1].Value);
+
+                                return new
+                                {
+                                    TestName = split[0].Replace(x.Type, "").Replace("()", "").Replace(".", "").Trim(),
+                                    StepName = split[1].Trim(),
+                                    StepPosition = stepPosition,
+                                    Type = x.Type,
+                                    Result = x.Result
+                                };
+                            }
+                            else
+                            {
+                                return new
+                                {
+                                    TestName = split[0].Replace(x.Type, "").Replace("()", "").Replace(".", "").Trim(),
+                                    StepName = split[0].Trim(),
+                                    StepPosition = 0,
+                                    Type = x.Type,
+                                    Result = x.Result
+                                };
+                            }
+
+                            
                         })
                         .GroupBy(x => new Tuple<string, string>(x.Type, x.TestName))
                         .Select(x =>
@@ -77,6 +95,14 @@ namespace XunitReporter
                             t.TestResult = t.TestSteps.Any(s => s.StepResult == TestResult.Fail)
                                 ? TestResult.Fail
                                 : TestResult.Pass;
+
+
+                            if (t.TestSteps.All(s => s.StepResult == TestResult.Skip))
+                            {
+                                t.TestResult = TestResult.Skip;
+                                t.TestSteps = new List<TestStepModel>();
+                            }
+
                             return t;
                         })
                         .ToList();

@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<assemblies>
+  <assembly name="C:\projects\CommandScratchpad\CommandScratchpad\bin\Debug\CommandScratchpad.EXE" environment="64-bit .NET 4.0.30319.42000 [collection-per-class, parallel (2 threads)]" test-framework="xUnit.net 2.1.0.3179" run-date="2017-01-27" run-time="16:20:51" config-file="C:\projects\CommandScratchpad\CommandScratchpad\bin\Debug\CommandScratchpad.exe.config" total="4" passed="2" failed="1" skipped="1" time="0.191" errors="0">
+    <errors />
+    <collection total="4" passed="2" failed="1" skipped="1" name="Test collection for RandomNamespace.FailingTest" time="0.041">
+      <test name="RandomNamespace.FailingTest.MyFailingScenario() [01] Given something" type="RandomNamespace.FailingTest" method="SkippedScenario" time="0.0025405" result="Pass" />
+      <test name="RandomNamespace.FailingTest.MyFailingScenario() [02] When something" type="RandomNamespace.FailingTest" method="SkippedScenario" time="0.0000737" result="Pass" />
+      <test name="RandomNamespace.FailingTest.MyFailingScenario() [03] Then something should be true" type="RandomNamespace.FailingTest" method="SkippedScenario" time="0.0291338" result="Fail">
+        <failure exception-type="Xunit.Sdk.TrueException">
+          <message><![CDATA[Assert.True() Failure\r\nExpected: True\r\nActual:   False]]></message>
+          <stack-trace>
+            <![CDATA[   at RandomNamespace.FailingTest.<>c.<SkippedScenario>b__0_2() in C:\projects\CommandScratchpad\CommandScratchpad\FailingTest.cs:line 18
+   at Xbehave.StringExtensions.<>c__DisplayClass0_0.<x>b__0(IStepContext c) in C:\projects\xbehave-net\src\Xbehave.2.Core\StringExtensions.cs:line 38
+   at Xbehave.Execution.StepInvoker.<>c__DisplayClass8_1.<<InvokeBodyAsync>b__1>d.MoveNext() in C:\projects\xbehave-net\src\Xbehave.2.Execution.desktop\StepInvoker.cs:line 75
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)]]>
+          </stack-trace>
+        </failure>
+      </test>
+      <test name="RandomNamespace.FailingTest.MyFailingScenario() [04] And then another thing should be true" type="RandomNamespace.FailingTest" method="SkippedScenario" time="0" result="Skip">
+        <reason><![CDATA[Failed to execute preceding step: RandomNamespace.FailingTest.SkippedScenario() [03] Then something should be true]]></reason>
+      </test>
+    </collection>
+  </assembly>
+</assemblies>

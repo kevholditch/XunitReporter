@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<assemblies>
+  <assembly name="C:\projects\CommandScratchpad\CommandScratchpad\bin\Debug\CommandScratchpad.EXE" environment="64-bit .NET 4.0.30319.42000 [collection-per-class, parallel (2 threads)]" test-framework="xUnit.net 2.1.0.3179" run-date="2017-01-27" run-time="16:27:54" config-file="C:\projects\CommandScratchpad\CommandScratchpad\bin\Debug\CommandScratchpad.exe.config" total="1" passed="0" failed="0" skipped="1" time="0.100" errors="0">
+    <errors />
+    <collection total="1" passed="0" failed="0" skipped="1" name="Test collection for RandomNamespace.FailingTest" time="0.000">
+      <test name="RandomNamespace.FailingTest.SkippedScenario()" type="RandomNamespace.FailingTest" method="SkippedScenario" time="0" result="Skip">
+        <reason><![CDATA[skipping this scenario]]></reason>
+      </test>
+    </collection>
+  </assembly>
+</assemblies>
